@@ -9,7 +9,7 @@
 \usepackage{subfigure}
 \usepackage{booktabs}
 \usepackage{listings}
-\usepackage{url}
+\usepackage[hyphens]{url}
 \usepackage[hidelinks]{hyperref}
 
 % \usepackage{doi}
@@ -36,90 +36,155 @@ Tamino P.S.M. Hartmann\\
 \maketitle
 \begin{abstract}
 
-The following paper takes a look at interaction issues that can and have arisen for autonomous vehicles.
-After a look at the existing state of the industry, we will compare technologies already in use and how they handle possible issues.
-We will then try to extrapolate the current state of interaction for autonomous cars into the future.
-
-This proposal will take a more in-close look at what is to be considered when facing interaction issues between the system and its driver.
-To put that into perspective, we will begin by taking a look at existing autonomous vehicles and what can already be deduced from them.
-This could include driverless trains and autopilots of airplanes.
+The proposed paper gives an overview of interaction issues between a driver and his self-driving car.
+First we will look at the existing state of the industry to compare technologies already in use in respect to interaction aspects.
+Then we identify the two main aspects that need to be considered for any interaction concerning time-critical and or undefined scenarios where the vehicle will require immediate driver interaction.
+Finally we will look at existing solutions and offer up our own commentary and solutions to them.
 
 \end{abstract}
 
-\keywords{Autonomous vehicles, self-driving cars, interaction}
+\keywords{autonomous vehicle, self-driving car, driver-vehicle interaction, control hand-off considerations}
 
 \section{Introduction}
 
-Autonomous vehicles have a surprisingly long history, although they have only recently become feasible.
+Autonomous vehicles have a surprisingly long history, although they have only recently become technologically feasible.
+First widely proposed by Norman Bel Geddes at the World Fair in 1939, driverless cars were first thought to be cars that were controlled by technology within the road.
+Only in the 1980's did the steering control move from the road into the car itself.
+There it has stayed for now, although due to the significant adoption of ubiquitous networking the first systems have now been proposed where individual cars communicate with each other to further improve congestion and transport flow.
 
-This section will present a general history of all autonomous vehicles that have been envision, built, and used.
-Thus we will offer the current state of the technology as we understand, laying the basic groundwork necessary for our work.
-It will also serve to define the scope of our work – namely that we will primarily target our work at self-driving cars such as the current Google car \cite{www:google_car}.
+While the first estimates concerning the adoption of autonomous vehicles proved to be widely optimistic, we have now come into a time where the technology is capable of fulfilling this science fiction dream.
+Google's self-driving car \cite{www:google_car} has been widely reported on, although by far not the first project within the field.
+First large steps were made by the introduction of the DARPA-funded Autonomous Land Vehicle project in the United States of America.
+
+Indeed the first cars with partial autonomous capabilities have entered commercial production and are publicly available, as can be seen in section \ref{current_tech}.
+These capabilities include systems that keep a car traveling within its lane, park the car, and systems that react to emergency situations, for example by beginning breaking the vehicle even before the driver has had a chance to react.
+
+As these systems continue to increase in modern cars, the role of the driver is transforming from the single controlling entity to a more copilot-like role.
+However the current state of affairs hints that some interaction will always be required by the driver, for example when the autonomous drive system is confronted with a situation it cannot handle.
+This is where a potential massive problem exists: the hand-off of control from the vehicle to the driver, discussed in section \ref{hand_off_issue}.
+Even when the hand-off is successful (implying that the driver is in full control of the vehicle and aware of the fact), he will take a moment to understand the situation – moments he might not have.
+It is even possible that due to the high automation, drivers become unfamiliar with driving, lowering their capabilities to react in a timely and correct fashion to an emergency.
+This could actually increase the risk of an accident happening.
+
+This section will introduce the concept of autonomous cars, the main vehicle we will consider for the topic, and introduce the interaction issues that must be considered.
 
 \section{Current State}
 
-\subsection{Current Issues}
+In this section we will take a look at existing work on the topic of interaction issues between autonomous vehicles and their operators.
+Furthermore we will give a brief topic-specific general overview of existing technology and solutions.
 
-driver distraction accounted for more than 80 percent of “safety-critical events.
+\subsection{Existing Work}
+
+Little existing work exists at the time of writing this paper.
+We believe this to be because of two reasons: the relatively young age of the technology and the commercial secrecy of vehicle manufactures.
+
+An article in the Huffington Post \cite{www:huffington_post} brought the work of Clifford Nass to our attention who has begun working on interaction issues.
+However no published work has yet been publicly been made available.
+
+A draft also exists that parallels the proposed paper, but to our knowledge has not been finished yet \cite{cummings:authority}.
+It will also be incorporated into the proposed paper, especially as it has a similar approach to the topic.
+
+This section will provide an overview of any existing and relevant work we find.
+Due to the nature of the investing companies, that means that we will mainly have to focus on published newspaper articles for a glimpse of existing work.
 
 \subsection{Current Technology}
+\label{current_tech}
 
 Although most companies that have begun developing autonomous car technology remain relatively secretive, some information is publicly available.
-Therefore we will take a look at systems that are known to exist at this time, including the few systems already commercially available.
+Therefore we will take a look at some systems of interest that are known to exist at this time, including the few systems already commercially available.
 We will briefly highlight their technological standing and what can be deduced for interaction issues from how they have implemented the technology.
 
 \subsubsection{Autonomous Trains and Airplanes}
 
+An important point to remember when considering autonomous systems independent of the vehicle they control however is the capabilities of their human counterparts.
+Pilots and train engineers are for the most part highly trained.
+Chauffeurs for cars come near to the concept, but autonomous cars will in general be used by the general population.
+A population that has a varied range of experience, physical handicaps, and for whom driving is a tool to use instead of a profession.
+
+Here we will take a look if lessons can be learned from systems already in use for trains and airplanes.
+This includes issues that have already been identified and have caused accidents.
+Specifically we will study if some lessons can be learned and if their solutions can be applied to self-driving cars.
+
 \subsubsection{Daimler / Mercedes-Benz}
 
-\subsubsection{BMW}
+Daimler is advancing into the field of self-driving cars with its Intelligent Drive technology \cite{www:daimler_intelligent_drive}.
+
+Also interesting is the Attention Assistance function of a S-class Mercedes \cite{www:mercedes_attention_assist}.
+It can be significant for interaction issues as it extends the monitoring the car does from the outside world to the occupants of the vehicle.
+We will propose using such a function to improve how the hand-off issue can be handled.
 
 \subsubsection{Google}
 
-\subsubsection{Toyota}
+Google is the company that the public mostly associates with self-driving technology.
+Only a few articles exist and no official publication, but there are some videos that might be of concern to the topic.
+One of these shows another aspect of interacting with an autonomous car: the video where a legally blind person uses an autonomous car to drive \cite{www:google_blind}.
+This should be considered for the paper as the capability of such a driver to interact with the car is severely handicapped and therefore should be considered.
 
-\subsubsection{Audi}
+\section{Current and Future Issues}
 
-\section{Driver Alertness}
+This section explains the issues that already exist and issues that might and or will arise due to autonomous vehicles to the best of our abilities.
 
-The most basic aspect that has to be considered for autonomous vehicle interaction is that its passengers will require interaction.
-That will range from simply telling the car where to go to passing control to a human driver for handling of situations that the computer can not safely understand.
+\subsection{General Assumptions}
 
-However one cannot simply have control constantly switching between the machine and the driver – the driver might not be alert, might not be allowed to take control, or a multitude of other reasons.
-For this reason technology such as the Attention Assistance function of a S-class Mercedes can be significant for interaction issues.
-Instead of only having the vehicle read and process its surroundings, it can and probably should also monitor the driver and or its passengers.
+Here we will briefly highlight what assumptions we make concerning autonomous vehicles.
+This includes for example that the system will never actively cause an accident (due to fail-safe behavior).
+We will also define the role we assume the driver to have and how he will fulfill it.
+This should be done to allow us to focus only on the interaction aspects and not on the general technological hurdles that need to be overcome.
 
-\section{Cultural and Social Issues}
+\subsection{Driver Readiness and Capabilities}
 
-take a look at laws, practices, etc that need to be considered.
+A major issue is the attention span of drivers.
+It has been shown that humans tend to lose focus when supervising an autonomous system that seldom requires interaction.
+Therefore measuring the driver alertness and adapting how and if the car hands control over to the driver based on it should be considered also.
 
-\subsection{Driver Acceptance}
+An increase in automation also implies that drivers will miss out in experience with road situations that are nowadays still common.
+Mainly this means that drivers will become increasingly less capable of reacting correctly in the event that the autonomous system requires their assistance, even if they have been notified to the best of the systems capabilities beforehand.
 
-Should we keep the driver in the loop?
-If yes, how?
+This will also lead us to look at how to best convey required situational awareness to a driver in a possibly time-critical situation.
+That again ties in with using attention assistance systems to monitor what information the driver requires to react best.
 
-\section{Primary Issue: the Hand-off}
+This section will look at the human component of the interaction with the autonomous vehicle and what issues come from it.
+We will look at the problems that arise from an adoption of autonomous technology from a non-technical standpoint.
 
+\subsection{Control Hand-off Issues}
+\label{hand_off_issue}
+
+\begin{quote}
 The most dangerous moment in a self-driving car involves no immediate or obvious peril.
 It is not when, say, the computer must avoid a vehicle swerving into its lane or navigate some other recognizable hazard of the road -- a patch of ice, or a clueless pedestrian stepping into traffic.
 It is when something much more routine takes place: The computer hands over control of the vehicle to a human being.
 In that instant, the human must quickly rouse herself from whatever else she might have been doing while the computer handled the car and focus her attention on the road.
 As scientists now studying this moment have come to realize, the hand-off is laden with risks.
+\end{quote}
 From \cite{www:huffington_post}.
 
+\begin{quote}
 This brings up the most challenging obstacle on our road to the autonomous- driving future: managing the handoff.
 For as long as anyone, even Google, is willing to predict, cars will by necessity be semiautonomous; human drivers will still have to play some role.
 But figuring out what that role will be is complicated.
 Are we pilots or copilots? How far out of the loop can we be taken?
+\end{quote}
 From \cite{www:wired}.
 
-\section{Secondary Issues}
+Here we will take a look at the most important interaction issue – the hand-off of control from the vehicle to the driver.
+The two quotes are an excellent starting point for any of our work.
+This will include a comparison of how it is done in current technology and how it will evolve as self-driving cars become better and driver assistance is required less frequently.
+We will also consider limiting factors such as when the driver cannot be trusted to be fully capable of controlling the vehicle and whether the system should evaluate if it has a better chance of avoiding problems by not initiating a hand-off in the first place.
 
-Distractions because of free time, low alertness, etc.
+\section{Solutions}
+
+In this section we will discuss proposed solutions to the aforementioned issues, if available.
+We will also offer up our own solutions based on existing work and technologies.
+This section will most likely be highly speculative and thus will have no existing work to be based on.
+
+\section{Possible Future Work}
+
+Here we will offer a future outlook and where further work needs to be done.
+This includes systems where control of the vehicle is per default not with the driver – implying autonomous vehicles beyond their adoptive period where control is still with the driver.
 
 \section{Conclusion}
 
-TODO
+This section will be a summary of our findings.
 
 % do not change the bibliography style
 \bibliographystyle{abbrv}
