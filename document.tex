@@ -1,0 +1,116 @@
+\documentclass{acm_proc_article-sp}
+
+% UTF8 encoding and scalable fonts
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{listings}
+\usepackage{url}
+
+% \usepackage{doi}
+% \setlength{\paperheight}{11.69in}
+
+% Comment in when writing in German
+%\usepackage{ngerman}
+
+\begin{document}
+
+% Leave as is
+\conferenceinfo{5th Seminar on Research Trends in Media Informatics (RTMI '13).}{\\February 2013, Ulm University, Ulm, Germany.}
+\CopyrightYear{2013} 
+
+% Change to your title
+\title{A fantastic RTMI paper in ACM SIG Proceedings Format}
+
+% Change to your personal details
+\numberofauthors{1} 
+\author{
+\alignauthor
+John Doe\\
+       \affaddr{Institute of Media Informatics}\\
+       \affaddr{Ulm University}\\
+       \affaddr{Ulm, Germany}\\
+       \email{john.doe@uni-ulm.de}
+}
+
+\maketitle
+\begin{abstract}
+The abstract should summarize the complete paper and give a specific overview of what is covered in the paper. Do not confuse the abstract with an introduction.
+\end{abstract}
+
+% See http://www.acm.org/about/class/ on how to select appropriate categories, terms, and keywords
+% Use the 1998 classification for now.
+% A category with the (minimum) three required fields
+\category{H.4}{Information Systems Applications}{Miscellaneous}
+%A category including the fourth, optional field follows...
+\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
+% Select applicable general terms
+\terms{Theory} 
+
+% Specify relevant keywords (not more than 5)
+\keywords{ACM proceedings, \LaTeX, text tagging} 
+
+\section{Introduction}
+Please have a look at the ACM sample file and FAQs at \url{acm.org/sigs/publications/proceedings-templates} for formatting help, concerning figures, tables, and math. Examples of Table and Figure environments are included as comments below.
+
+\subsection{A Subsection}
+
+\subsubsection{A subsubsection}
+Usually three hierarchy levels are sufficient for papers. You should rethink your structure, if you need more levels.
+
+\begin{table}
+	\centering
+	\caption{Frequency of Special Characters}
+	\label{tab:table1}
+	\begin{tabular}{|c|c|l|} \hline
+	Non-English or Math&Frequency&Comments\\ \hline
+	\O & 1 in 1,000& For Swedish names\\ \hline
+	$\pi$ & 1 in 5& Common in math\\ \hline
+	\$ & 4 in 5 & Used in business\\ \hline
+	$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
+	\hline\end{tabular}
+\end{table}
+
+Let us put some more text here to test the cite stuff \cite{Lamport:LaTeX}.
+
+\begin{table*} % use the table* version to create tables spanning both columns
+	\centering
+	\caption{Some Typical Commands}
+	\label{tab:table2}
+	\begin{tabular}{|c|c|l|} \hline
+	Command&A Number&Comments\\ \hline
+	\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
+	\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
+	\texttt{{\char'134}table}& 300 & For tables\\ \hline
+	\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
+\end{table*}
+
+%\begin{figure}
+%	\centering
+%	\includegraphics[width=\columnwidth]{fly.pdf}
+%	\caption{A fly}
+%	\label{fig:fly}
+%\end{figure}
+
+\begin{displaymath}
+\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
+\end{displaymath}
+
+
+% do not change the bibliography style
+\bibliographystyle{abbrv}
+% sigproc.bib is the name of the Bibliography in this case, change to your file
+\bibliography{sources}  
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+
+% use this to make sure that columns are balanced on the last page.
+\balancecolumns
+
+\end{document}
