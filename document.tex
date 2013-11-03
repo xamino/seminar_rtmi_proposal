@@ -10,22 +10,20 @@
 \usepackage{booktabs}
 \usepackage{listings}
 \usepackage{url}
+\usepackage[hidelinks]{hyperref}
 
 % \usepackage{doi}
 % \setlength{\paperheight}{11.69in}
-
-% Comment in when writing in German
-%\usepackage{ngerman}
 
 \begin{document}
 
 % Leave as is
 \conferenceinfo{5th Seminar on Research Trends in Media Informatics (RTMI '13).}{\\February 2013, Ulm University, Ulm, Germany.}
-\CopyrightYear{2013} 
+\CopyrightYear{2013}
 
 \title{Interaction Issues during Autonomous Driving}
 
-\numberofauthors{1} 
+\numberofauthors{1}
 \author{
 \alignauthor
 Tamino P.S.M. Hartmann\\
@@ -37,78 +35,96 @@ Tamino P.S.M. Hartmann\\
 
 \maketitle
 \begin{abstract}
-The abstract should summarize the complete paper and give a specific overview of what is covered in the paper. Do not confuse the abstract with an introduction.
+
+The following paper takes a look at interaction issues that can and have arisen for autonomous vehicles.
+After a look at the existing state of the industry, we will compare technologies already in use and how they handle possible issues.
+We will then try to extrapolate the current state of interaction for autonomous cars into the future.
+
+This proposal will take a more in-close look at what is to be considered when facing interaction issues between the system and its driver.
+To put that into perspective, we will begin by taking a look at existing autonomous vehicles and what can already be deduced from them.
+This could include driverless trains and autopilots of airplanes.
+
 \end{abstract}
 
-% See http://www.acm.org/about/class/ on how to select appropriate categories, terms, and keywords
-% Use the 1998 classification for now.
-% A category with the (minimum) three required fields
-\category{H.4}{Information Systems Applications}{Miscellaneous}
-%A category including the fourth, optional field follows...
-\category{D.2.8}{Software Engineering}{Metrics}[complexity measures, performance measures]
-% Select applicable general terms
-\terms{Theory} 
-
-% Specify relevant keywords (not more than 5)
-\keywords{ACM proceedings, \LaTeX, text tagging} 
+\keywords{Autonomous vehicles, self-driving cars, interaction}
 
 \section{Introduction}
-Please have a look at the ACM sample file and FAQs at \url{acm.org/sigs/publications/proceedings-templates} for formatting help, concerning figures, tables, and math. Examples of Table and Figure environments are included as comments below.
 
-\subsection{A Subsection}
+Autonomous vehicles have a surprisingly long history, although they have only recently become feasible.
 
-\subsubsection{A subsubsection}
-Usually three hierarchy levels are sufficient for papers. You should rethink your structure, if you need more levels.
+This section will present a general history of all autonomous vehicles that have been envision, built, and used.
+Thus we will offer the current state of the technology as we understand, laying the basic groundwork necessary for our work.
+It will also serve to define the scope of our work – namely that we will primarily target our work at self-driving cars such as the current Google car \cite{www:google_car}.
 
-\begin{table}
-	\centering
-	\caption{Frequency of Special Characters}
-	\label{tab:table1}
-	\begin{tabular}{|c|c|l|} \hline
-	Non-English or Math&Frequency&Comments\\ \hline
-	\O & 1 in 1,000& For Swedish names\\ \hline
-	$\pi$ & 1 in 5& Common in math\\ \hline
-	\$ & 4 in 5 & Used in business\\ \hline
-	$\Psi^2_1$ & 1 in 40,000& Unexplained usage\\
-	\hline\end{tabular}
-\end{table}
+\section{Current State}
 
-Let us put some more text here to test the cite stuff \cite{Lamport:LaTeX}.
+\subsection{Current Issues}
 
-\begin{table*} % use the table* version to create tables spanning both columns
-	\centering
-	\caption{Some Typical Commands}
-	\label{tab:table2}
-	\begin{tabular}{|c|c|l|} \hline
-	Command&A Number&Comments\\ \hline
-	\texttt{{\char'134}alignauthor} & 100& Author alignment\\ \hline
-	\texttt{{\char'134}numberofauthors}& 200& Author enumeration\\ \hline
-	\texttt{{\char'134}table}& 300 & For tables\\ \hline
-	\texttt{{\char'134}table*}& 400& For wider tables\\ \hline\end{tabular}
-\end{table*}
+driver distraction accounted for more than 80 percent of “safety-critical events.
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=\columnwidth]{fly.pdf}
-%	\caption{A fly}
-%	\label{fig:fly}
-%\end{figure}
+\subsection{Current Technology}
 
-\begin{displaymath}
-\lim_{x\rightarrow\infty} \frac{f(x)}{g(x)} = L.
-\end{displaymath}
+Although most companies that have begun developing autonomous car technology remain relatively secretive, some information is publicly available.
+Therefore we will take a look at systems that are known to exist at this time, including the few systems already commercially available.
+We will briefly highlight their technological standing and what can be deduced for interaction issues from how they have implemented the technology.
 
+\subsubsection{Autonomous Trains and Airplanes}
+
+\subsubsection{Daimler / Mercedes-Benz}
+
+\subsubsection{BMW}
+
+\subsubsection{Google}
+
+\subsubsection{Toyota}
+
+\subsubsection{Audi}
+
+\section{Driver Alertness}
+
+The most basic aspect that has to be considered for autonomous vehicle interaction is that its passengers will require interaction.
+That will range from simply telling the car where to go to passing control to a human driver for handling of situations that the computer can not safely understand.
+
+However one cannot simply have control constantly switching between the machine and the driver – the driver might not be alert, might not be allowed to take control, or a multitude of other reasons.
+For this reason technology such as the Attention Assistance function of a S-class Mercedes can be significant for interaction issues.
+Instead of only having the vehicle read and process its surroundings, it can and probably should also monitor the driver and or its passengers.
+
+\section{Cultural and Social Issues}
+
+take a look at laws, practices, etc that need to be considered.
+
+\subsection{Driver Acceptance}
+
+Should we keep the driver in the loop?
+If yes, how?
+
+\section{Primary Issue: the Hand-off}
+
+The most dangerous moment in a self-driving car involves no immediate or obvious peril.
+It is not when, say, the computer must avoid a vehicle swerving into its lane or navigate some other recognizable hazard of the road -- a patch of ice, or a clueless pedestrian stepping into traffic.
+It is when something much more routine takes place: The computer hands over control of the vehicle to a human being.
+In that instant, the human must quickly rouse herself from whatever else she might have been doing while the computer handled the car and focus her attention on the road.
+As scientists now studying this moment have come to realize, the hand-off is laden with risks.
+From \cite{www:huffington_post}.
+
+This brings up the most challenging obstacle on our road to the autonomous- driving future: managing the handoff.
+For as long as anyone, even Google, is willing to predict, cars will by necessity be semiautonomous; human drivers will still have to play some role.
+But figuring out what that role will be is complicated.
+Are we pilots or copilots? How far out of the loop can we be taken?
+From \cite{www:wired}.
+
+\section{Secondary Issues}
+
+Distractions because of free time, low alertness, etc.
+
+\section{Conclusion}
+
+TODO
 
 % do not change the bibliography style
 \bibliographystyle{abbrv}
-% sigproc.bib is the name of the Bibliography in this case, change to your file
 \bibliography{sources}  
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
 
-% use this to make sure that columns are balanced on the last page.
 \balancecolumns
 
 \end{document}
